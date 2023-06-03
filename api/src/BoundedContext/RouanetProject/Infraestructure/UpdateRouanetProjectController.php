@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Src\BoundedContext\User\Infrastructure;
+namespace Src\BoundedContext\RouanetProject\Infrastructure;
 
 use Illuminate\Http\Request;
 use Src\BoundedContext\RouanetProject\Infrastructure\Repositories\EloquentRouanetProjectRepository;
@@ -10,7 +10,7 @@ use Src\BoundedContext\RouanetProject\Infrastructure\UseCases\GetRouanetProjectU
 use Src\BoundedContext\RouanetProject\Infrastructure\UseCases\UpdateRouanetProjectUseCase;
 
 
-final class UpdateUserController
+final class UpdateRouanetProjectController
 {
     private $repository;
 
