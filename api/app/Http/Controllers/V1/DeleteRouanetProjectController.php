@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\V1;
 
-use App\Http\Resources\RouanetProjectResource;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Src\BoundedContext\RouanetProject\Infrastructure\DeleteRouanetProjectController as DeleteController;
 

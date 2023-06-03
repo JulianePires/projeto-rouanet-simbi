@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\V1;
 
+use App\Http\Controllers\Controller;
 use App\Http\Resources\RouanetProjectResource;
 use Illuminate\Http\Request;
 use Src\BoundedContext\RouanetProject\Infrastructure\GetRouanetProjectController as GetController;
