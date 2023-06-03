@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectId;
+namespace Src\BoundedContext\RouanetProject\Infrastructure\UseCases;
+
+use Src\BoundedContext\RouanetProject\Domain\Contracts\RouanetProjectRepositoryContract;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectId;
 use Src\BoundedContext\RouanetProject\Domain\RouanetProject;
 
 final class GetRouanetProjectUseCase

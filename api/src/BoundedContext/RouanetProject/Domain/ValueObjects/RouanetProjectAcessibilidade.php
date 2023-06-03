@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace src\BoundedContext\RouanetProject\Domain\ValueObjects;
+namespace Src\BoundedContext\RouanetProject\Domain\ValueObjects;
 
 use InvalidArgumentException;
 

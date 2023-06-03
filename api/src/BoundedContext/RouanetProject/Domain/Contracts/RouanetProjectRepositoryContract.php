@@ -1,9 +1,12 @@
 <?php
-use Src\BoundedContext\RouanetProject\Domain\RouanetProject;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectId;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectNome;
 
 declare(strict_types=1);
+
+namespace Src\BoundedContext\RouanetProject\Domain\Contracts;
+
+use Src\BoundedContext\RouanetProject\Domain\RouanetProject;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectId;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectNome;
 
 interface RouanetProjectRepositoryContract
 {

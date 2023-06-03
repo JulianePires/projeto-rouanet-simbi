@@ -2,6 +2,10 @@
 
 declare(strict_types=1);
 
+namespace Src\BoundedContext\RouanetProject\Infrastructure\UseCases;
+
+use Src\BoundedContext\RouanetProject\Domain\Contracts\RouanetProjectRepositoryContract;
+
 final class GetAllRouanetProjectUseCase
 {
     private $repository;

@@ -2,42 +2,44 @@
 
 declare(strict_types=1);
 
+namespace Src\BoundedContext\RouanetProject\Infrastructure\UseCases;
+
 use Src\BoundedContext\RouanetProject\Domain\RouanetProject;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectAcessibilidade;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectAnoProjeto;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectArea;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectCreatedAt;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectDataInicio;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectDataTermino;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectDemocratizacao;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectEnquadramento;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectEspecificacaoTecnica;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectEstrategiaExecucao;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectEtapa;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectFichaTecnica;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectId;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectImpactoAmbiental;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectJustificativa;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectLinkIncentivadores;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectMecanismo;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectMunicipio;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectNome;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectObjetivo;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectObjetivos;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectOutrasFontes;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectPronac;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectProvidencia;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectResumo;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectSegmento;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectSinopse;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectSituacao;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectUf;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectUpdatedAt;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectValorAprovado;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectValorCaptado;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectValorProjeto;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectValorProposta;
-use src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectValorSolicitado;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectAcessibilidade;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectAnoProjeto;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectArea;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectCreatedAt;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectDataInicio;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectDataTermino;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectDemocratizacao;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectEnquadramento;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectEspecificacaoTecnica;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectEstrategiaExecucao;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectEtapa;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectFichaTecnica;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectId;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectImpactoAmbiental;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectJustificativa;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectLinkIncentivadores;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectMecanismo;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectMunicipio;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectNome;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectObjetivo;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectObjetivos;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectOutrasFontes;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectPronac;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectProvidencia;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectResumo;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectSegmento;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectSinopse;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectSituacao;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectUf;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectUpdatedAt;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectValorAprovado;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectValorCaptado;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectValorProjeto;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectValorProposta;
+use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectValorSolicitado;
 
 final class CreateRouanetProjectUseCase
 {
@@ -75,8 +77,8 @@ final class CreateRouanetProjectUseCase
         string $rouanetProjectDemocratizacao,
         string $rouanetProjectSinopse,
         string $rouanetProjectResumo,
-        DateTime $rouanetProjectCreatedAt,
-        DateTime $rouanetProjectUpdatedAt,
+        string $rouanetProjectCreatedAt,
+        string $rouanetProjectUpdatedAt,
         string $rouanetProjectValorProjeto,
         string $rouanetProjectOutrasFontes,
         string $rouanetProjectValorProposta,
@@ -111,8 +113,8 @@ final class CreateRouanetProjectUseCase
         $democratizacao = new RouanetProjectDemocratizacao($rouanetProjectDemocratizacao);
         $sinopse = new RouanetProjectSinopse($rouanetProjectSinopse);
         $resumo = new RouanetProjectResumo($rouanetProjectResumo);
-        $createdAt = new RouanetProjectCreatedAt(strval($rouanetProjectCreatedAt));
-        $updatedAt = new RouanetProjectUpdatedAt(strval($rouanetProjectUpdatedAt));
+        $createdAt = new RouanetProjectCreatedAt($rouanetProjectCreatedAt);
+        $updatedAt = new RouanetProjectUpdatedAt($rouanetProjectUpdatedAt);
         $valorProjeto = new RouanetProjectValorProjeto($rouanetProjectValorProjeto);
         $outrasFontes = new RouanetProjectOutrasFontes($rouanetProjectOutrasFontes);
         $valorProposta = new RouanetProjectValorProposta($rouanetProjectValorProposta);
@@ -159,6 +161,6 @@ final class CreateRouanetProjectUseCase
             $linkIncentivadores
         );
 
-         $this->repository->save($rouanetProject);
+        $this->repository->save($rouanetProject);
     }
 }
