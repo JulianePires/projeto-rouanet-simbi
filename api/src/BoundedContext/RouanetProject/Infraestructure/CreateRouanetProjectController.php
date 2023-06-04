@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Src\BoundedContext\RouanetProject\Infrastructure;
+namespace Src\BoundedContext\RouanetProject\Infraestructure;
 
 use Illuminate\Http\Request;
-use Src\BoundedContext\RouanetProject\Infrastructure\Repositories\EloquentRouanetProjectRepository;
-use Src\BoundedContext\RouanetProject\Infrastructure\UseCases\CreateRouanetProjectUseCase;
-use Src\BoundedContext\RouanetProject\Infrastructure\UseCases\GetByNameRouanetProjectUseCase;
+use Src\BoundedContext\RouanetProject\Infraestructure\Repositories\EloquentRouanetProjectRepository;
+use Src\BoundedContext\RouanetProject\UseCases\CreateRouanetProjectUseCase;
+use Src\BoundedContext\RouanetProject\UseCases\GetByNameRouanetProjectUseCase;
 
 final class CreateRouanetProjectController
 {

@@ -2,10 +2,15 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class RouanetProject
+class RouanetProject extends Model
 {
+    protected $table = 'tb_projeto_rouanet_teste';
+    use HasFactory;
+
     use Notifiable;
 
     /**

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Src\BoundedContext\RouanetProject\Infrastructure\UseCases;
+namespace Src\BoundedContext\RouanetProject\UseCases;
 
 use Src\BoundedContext\RouanetProject\Domain\Contracts\RouanetProjectRepositoryContract;
 use Src\BoundedContext\RouanetProject\Domain\RouanetProject;

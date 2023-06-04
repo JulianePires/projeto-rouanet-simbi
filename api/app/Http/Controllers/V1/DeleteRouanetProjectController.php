@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers\V1;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Src\BoundedContext\RouanetProject\Infrastructure\DeleteRouanetProjectController as DeleteController;
+use Src\BoundedContext\RouanetProject\Infraestructure\DeleteRouanetProjectController as DeleteController;
 
 class DeleteRouanetProjectController extends Controller
 {

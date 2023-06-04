@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\V1;
 
 use App\Http\Controllers\Controller;
-use Src\BoundedContext\RouanetProject\Infrastructure\GetAllRouanetProjectController as GetAllController;
+use Src\BoundedContext\RouanetProject\Infraestructure\GetAllRouanetProjectController;
 
-class GetAllRouanetProjectController extends Controller
+/**
+ * @OA\Info(title="My First API", version="0.1")
+ */
+class ApiGetAllRouanetProjectController extends Controller
 {
     /**
      * @OA\Get(
@@ -17,6 +20,12 @@ class GetAllRouanetProjectController extends Controller
      * ),
      *
     */
+    /**
+     * Handle the incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $rouanetProjects = $this->getAllRouanetProjectController->__invoke();
@@ -25,25 +34,12 @@ class GetAllRouanetProjectController extends Controller
     }
 
     /**
-     * @var GetAllController
+     * @var GetAllRouanetProjectController
      */
     private $getAllRouanetProjectController;
 
-    public function __construct(GetAllController $getAllRouanetProjectController)
+    public function __construct(GetAllRouanetProjectController $getAllRouanetProjectController)
     {
         $this->getAllRouanetProjectController = $getAllRouanetProjectController;
-    }
-
-    /**
-     * Handle the incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function __invoke()
-    {
-        $rouanetProjects = $this->getAllRouanetProjectController->__invoke();
-
-        return response($rouanetProjects, 200);
     }
 }

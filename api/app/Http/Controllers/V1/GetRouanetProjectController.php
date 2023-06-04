@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers\V1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\RouanetProjectResource;
 use Illuminate\Http\Request;
-use Src\BoundedContext\RouanetProject\Infrastructure\GetRouanetProjectController as GetController;
+use Src\BoundedContext\RouanetProject\Infraestructure\GetRouanetProjectController as GetController;
 
 class GetRouanetProjectController extends Controller
 {

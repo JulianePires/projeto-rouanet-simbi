@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Src\BoundedContext\RouanetProject\Infrastructure\Repositories;
+namespace Src\BoundedContext\RouanetProject\Infraestructure\Repositories;
 
 use App\RouanetProject as EloquentRouanetProjectModel;
 use Src\BoundedContext\RouanetProject\Domain\Contracts\RouanetProjectRepositoryContract;
@@ -42,7 +42,6 @@ use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectValorCap
 use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectValorProjeto;
 use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectValorProposta;
 use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectValorSolicitado;
-
 
 final class EloquentRouanetProjectRepository implements RouanetProjectRepositoryContract
 {
@@ -99,7 +98,7 @@ final class EloquentRouanetProjectRepository implements RouanetProjectRepository
 
     public function findAll(): array
     {
-        $rouanetProjects = $this->eloquentRouanetProjectModel->all();
+        $rouanetProjects = $this->eloquentRouanetProjectModel->findAll();
 
         return $rouanetProjects;
     }

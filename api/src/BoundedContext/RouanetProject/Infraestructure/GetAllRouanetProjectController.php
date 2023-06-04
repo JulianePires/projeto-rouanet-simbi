@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Src\BoundedContext\RouanetProject\Infrastructure;
+namespace Src\BoundedContext\RouanetProject\Infraestructure;
 
-use Src\BoundedContext\RouanetProject\Infrastructure\Repositories\EloquentRouanetProjectRepository;
-use Src\BoundedContext\RouanetProject\Infrastructure\UseCases\GetAllRouanetProjectUseCase;
+use Src\BoundedContext\RouanetProject\Infraestructure\Repositories\EloquentRouanetProjectRepository;
+use Src\BoundedContext\RouanetProject\UseCases\GetAllRouanetProjectUseCase;
 
 final class GetAllRouanetProjectController
 {
