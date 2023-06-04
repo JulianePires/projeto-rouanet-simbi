@@ -4,14 +4,17 @@ import GlobalStyle from 'commons/styles/globalStyle'
 import Main from 'containers/Main'
 import {ThemeProvider} from '@mui/material'
 import theme from 'commons/styles/muiTheme'
+import {RouanetProjectsProvider} from 'hooks/useRouanetProjects'
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <StylesProvider injectFirst>
-        <CssBaseline />
-        <GlobalStyle />
-        <Main />
+        <RouanetProjectsProvider>
+          <CssBaseline />
+          <GlobalStyle />
+          <Main />
+        </RouanetProjectsProvider>
       </StylesProvider>
     </ThemeProvider>
   )

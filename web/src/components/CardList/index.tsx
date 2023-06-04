@@ -13,14 +13,14 @@ const CardList: React.FC<Props> = ({data}) => {
     <CardListContainer>
       {data.map((project) => (
         <Card
-          key={project.idProjeto}
+          key={project.id_projeto}
           projectName={project.nome}
           city={project.municipio}
           state={project.uf}
           tag="Rouanet"
           summary={project.resumo}
-          amountApproved={formatAmount(Number(project.valorAprovado))}
-          amountRaised={formatAmount(Number(project.valorCaptado))}
+          amountApproved={formatAmount(Number(project.valor_aprovado))}
+          amountRaised={formatAmount(Number(project.valor_captado))}
         />
       ))}
     </CardListContainer>

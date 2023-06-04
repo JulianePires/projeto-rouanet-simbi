@@ -9,19 +9,19 @@ interface Props {
 }
 
 const Carousel: React.FC<Props> = ({data}) => {
-    console.log(data)
+  console.log(data)
   return (
-    <MaterialCarousel autoPlay={false} navButtonsAlwaysVisible cycleNavigation>
+    <MaterialCarousel autoPlay={false} cycleNavigation>
       {data.map((project) => (
         <Card
-          key={project.idProjeto}
+          key={project.id_projeto}
           projectName={project.nome}
           city={project.municipio}
           state={project.uf}
           tag="Rouanet"
           summary={project.resumo}
-          amountApproved={formatAmount(Number(project.valorAprovado))}
-          amountRaised={formatAmount(Number(project.valorCaptado))}
+          amountApproved={formatAmount(Number(project.valor_aprovado))}
+          amountRaised={formatAmount(Number(project.valor_captado))}
         />
       ))}
     </MaterialCarousel>

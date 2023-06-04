@@ -7,6 +7,7 @@ namespace App\Http\Controllers\V1;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\RouanetProjectResource;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Src\BoundedContext\RouanetProject\Infraestructure\GetRouanetProjectController as GetController;
 
 /**
@@ -58,7 +59,7 @@ class GetRouanetProjectController extends Controller
      */
     public function index(Request $request)
     {
-        $rouanetProject = (array) new RouanetProjectResource($this->getRouanetProjectController->__invoke($request));
+        $rouanetProject = (array) $this->getRouanetProjectController->__invoke($request);
 
         return response($rouanetProject, 200);
     }
