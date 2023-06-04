@@ -9,6 +9,35 @@ use App\Http\Resources\RouanetProjectResource;
 use Illuminate\Http\Request;
 use Src\BoundedContext\RouanetProject\Infraestructure\UpdateRouanetProjectController as UpdateController;
 
+/**
+ * @OA\Info(
+ *      version="1.0.0",
+ *      title="OpenApi Documentation",
+ *      description="Swagger OpenApi description",
+ * )
+ *
+ * @OA\Server(
+ *      url=L5_SWAGGER_CONST_HOST,
+ *      description="API Server"
+ * )
+ *
+ * @OA\Tag(
+ *     name="Rouanet Projects",
+ *     description="Api Endpoints"
+ * )
+ */
+
+/**
+ * @OA\Put(
+ *     tags={"rouanetProject"},
+ *     summary="Updates a Rouanet Project",
+ *     description="Updates a object of Rouanet Project",
+ *     path="api/V1/projects/{idProjeto}",
+ *     @OA\Response(response="200", description="A Rouanet Project updated successfully"),
+ * ),
+ *
+ */
+
 class UpdateRouanetProjectController extends Controller
 {
     /**
@@ -27,9 +56,9 @@ class UpdateRouanetProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(Request $request)
+    public function index(Request $request)
     {
-        $updatedRouanetProject = new RouanetProjectResource($this->updateRouanetProjectController->__invoke($request));
+        $updatedRouanetProject = (array) new RouanetProjectResource($this->updateRouanetProjectController->__invoke($request));
 
         return response($updatedRouanetProject, 200);
     }

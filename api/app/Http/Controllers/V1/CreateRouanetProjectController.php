@@ -9,6 +9,35 @@ use App\Http\Resources\RouanetProjectResource;
 use Illuminate\Http\Request;
 use Src\BoundedContext\RouanetProject\Infraestructure\CreateRouanetProjectController as CreateController;
 
+/**
+ * @OA\Info(
+ *      version="1.0.0",
+ *      title="OpenApi Documentation",
+ *      description="Swagger OpenApi description",
+ * )
+ *
+ * @OA\Server(
+ *      url=L5_SWAGGER_CONST_HOST,
+ *      description="API Server"
+ * )
+ *
+ * @OA\Tag(
+ *     name="Rouanet Projects",
+ *     description="Api Endpoints"
+ * )
+ */
+
+/**
+ * @OA\Post(
+ *     tags={"rouanetProject"},
+ *     summary="Creates a Rouanet Project",
+ *     description="Creates a object of Rouanet Project",
+ *     path="api/V1/projects",
+ *     @OA\Response(response="201", description="Project created"),
+ * ),
+ *
+ */
+
 class CreateRouanetProjectController extends Controller
 {
     /**
@@ -27,9 +56,9 @@ class CreateRouanetProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(Request $request)
+    public function index(Request $request)
     {
-        $newRouanetProject = new RouanetProjectResource($this->createRouanetProjectController->__invoke($request));
+        $newRouanetProject = (array) new RouanetProjectResource($this->createRouanetProjectController->__invoke($request));
 
         return response($newRouanetProject, 201);
     }

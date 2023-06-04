@@ -11,32 +11,18 @@ use Illuminate\Routing\Controller as BaseController;
 /**
  * @OA\Info(
  *      version="1.0.0",
- *      title=" OpenApi Documentation",
- *      description=" Swagger OpenApi description",
- *      @OA\Contact(
- *          email="admin@admin.com"
- *      ),
- *      @OA\License(
- *          name="Apache 2.0",
- *          url="http://www.apache.org/licenses/LICENSE-2.0.html"
- *      )
+ *      title="OpenApi Documentation",
+ *      description="Swagger OpenApi description",
  * )
  *
  * @OA\Server(
  *      url=L5_SWAGGER_CONST_HOST,
- *      description=" API Server"
+ *      description="API Server"
  * )
-
  *
  * @OA\Tag(
- *     name="Projects",
- *     description=" Api Endpoints"
- * )
- * @OA\Schemes(format="http")
- * @OAS\SecurityScheme(
- *      securityScheme="bearer_token",
- *      type="http",
- *      scheme="bearer"
+ *     name="Rouanet Projects",
+ *     description="Api Endpoints"
  * )
  */
 class Controller extends BaseController

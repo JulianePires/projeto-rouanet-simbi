@@ -1,0 +1,19 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Rouanet Projects API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "api/V1/projects": {
+            "get": {
+                "description": "Get a list of roaunet projects",
+                "responses": {
+                    "default": {
+                        "description": "A list of Rouanet Projects"
+                    }
+                }
+            }
+        }
+    }
+}

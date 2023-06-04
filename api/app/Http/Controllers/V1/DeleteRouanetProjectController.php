@@ -8,6 +8,35 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Src\BoundedContext\RouanetProject\Infraestructure\DeleteRouanetProjectController as DeleteController;
 
+/**
+ * @OA\Info(
+ *      version="1.0.0",
+ *      title="OpenApi Documentation",
+ *      description="Swagger OpenApi description",
+ * )
+ *
+ * @OA\Server(
+ *      url=L5_SWAGGER_CONST_HOST,
+ *      description="API Server"
+ * )
+ *
+ * @OA\Tag(
+ *     name="Rouanet Projects",
+ *     description="Api Endpoints"
+ * )
+ */
+
+/**
+ * @OA\Delete(
+ *     tags={"rouanetProject"},
+ *     summary="Deletes a Rouanet Project",
+ *     description="Deletes a object of Rouanet Project",
+ *     path="api/V1/projects/{idProjeto}",
+ *     @OA\Response(response="204", description="Project deleted"),
+ * ),
+ *
+ */
+
 class DeleteRouanetProjectController extends Controller
 {
     /**
@@ -26,7 +55,7 @@ class DeleteRouanetProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(Request $request)
+    public function index(Request $request)
     {
         $this->deleteRouanetProjectController->__invoke($request);
 

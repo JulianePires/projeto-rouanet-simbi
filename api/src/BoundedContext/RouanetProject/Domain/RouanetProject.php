@@ -40,42 +40,222 @@ use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectValorPro
 use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectValorProposta;
 use Src\BoundedContext\RouanetProject\Domain\ValueObjects\RouanetProjectValorSolicitado;
 
+/**
+ * @OA\Schema(
+ *  schema="RouanetProject"
+ * )
+ */
 final class RouanetProject
 {
+    /**
+     * The project id,
+     * @var int
+     * @OA\Property()
+     */
     private $idProjeto;
+    /**
+     * The pronac number,
+     * @var string
+     * @OA\Property()
+     */
     private $pronac;
+    /**
+     * The project year,
+     * @var string
+     * @OA\Property()
+     */
     private $anoProjeto;
+    /**
+     * The project name,
+     * @var string
+     * @OA\Property()
+     */
     private $nome;
+    /**
+     * The segment,
+     * @var string
+     * @OA\Property()
+     */
     private $segmento;
+    /**
+     * The project area,
+     * @var string
+     * @OA\Property()
+     */
     private $area;
+    /**
+     * The project uf,
+     * @var string
+     * @OA\Property()
+     */
     private $uf;
+    /**
+     * The project city,
+     * @var string
+     * @OA\Property()
+     */
     private $municipio;
+    /**
+     * The project beginning date,
+     * @var string
+     * @OA\Property()
+     */
     private $dataInicio;
+    /**
+     * The project finish date,
+     * @var string
+     * @OA\Property()
+     */
     private $dataTermino;
+    /**
+     * The project situation,
+     * @var string
+     * @OA\Property()
+     */
     private $situacao;
+    /**
+     * The project mecanism,
+     * @var string
+     * @OA\Property()
+     */
     private $mecanismo;
+    /**
+     * The project framework,
+     * @var string
+     * @OA\Property()
+     */
     private $enquadramento;
+    /**
+     * The project raised amount,
+     * @var string
+     * @OA\Property()
+     */
     private $valorCaptado;
+    /**
+     * The project approved amount,
+     * @var string
+     * @OA\Property()
+     */
     private $valorAprovado;
+    /**
+     * The project acessibility,
+     * @var string
+     * @OA\Property()
+     */
     private $acessibilidade;
+    /**
+     * The project objectives,
+     * @var string
+     * @OA\Property()
+     */
     private $objetivos;
+    /**
+     * The project justifyments,
+     * @var string
+     * @OA\Property()
+     */
     private $justificativa;
+    /**
+     * The project stage,
+     * @var string
+     * @OA\Property()
+     */
     private $etapa;
+    /**
+     * The project datasheet,
+     * @var string
+     * @OA\Property()
+     */
     private $fichaTecnica;
+    /**
+     * The project ambiental impact,
+     * @var string
+     * @OA\Property()
+     */
     private $impactoAmbiental;
+    /**
+     * The project tecnical specificity,
+     * @var string
+     * @OA\Property()
+     */
     private $especificacaoTecnica;
+    /**
+     * The project providency,
+     * @var string
+     * @OA\Property()
+     */
     private $providencia;
+    /**
+     * The project democratization,
+     * @var string
+     * @OA\Property()
+     */
     private $democratizacao;
+    /**
+     * The project sinopse,
+     * @var string
+     * @OA\Property()
+     */
     private $sinopse;
+    /**
+     * The project summary,
+     * @var string
+     * @OA\Property()
+     */
     private $resumo;
+    /**
+     * The project creation date,
+     * @var string
+     * @OA\Property()
+     */
     private $createdAt;
+    /**
+     * The project update date,
+     * @var string
+     * @OA\Property()
+     */
     private $updatedAt;
+    /**
+     * The project value,
+     * @var string
+     * @OA\Property()
+     */
     private $valorProjeto;
+    /**
+     * The project other sources,
+     * @var string
+     * @OA\Property()
+     */
     private $outrasFontes;
+    /**
+     * The project propouse value,
+     * @var string
+     * @OA\Property()
+     */
     private $valorProposta;
+    /**
+     * The project requested value,
+     * @var string
+     * @OA\Property()
+     */
     private $valorSolicitado;
+    /**
+     * The project objective,
+     * @var string
+     * @OA\Property()
+     */
     private $objetivo;
+    /**
+     * The project execution strategy,
+     * @var string
+     * @OA\Property()
+     */
     private $estrategiaExecucao;
+    /**
+     * The project link boosters,
+     * @var string
+     * @OA\Property()
+     */
     private $linkIncentivadores;
 
     public function __construct(

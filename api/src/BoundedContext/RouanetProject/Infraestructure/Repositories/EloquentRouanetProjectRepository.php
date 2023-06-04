@@ -54,7 +54,8 @@ final class EloquentRouanetProjectRepository implements RouanetProjectRepository
 
     public function find(RouanetProjectId $idProjeto): ?RouanetProject
     {
-        $rouanetProject = $this->eloquentRouanetProjectModel->findOrFail($idProjeto->value());
+        $rouanetProject = $this->eloquentRouanetProjectModel->where('id_projeto', $idProjeto->value())
+            ->firstOrFail();
 
         // Return Domain RouanetProject model
         return new RouanetProject(
@@ -98,7 +99,7 @@ final class EloquentRouanetProjectRepository implements RouanetProjectRepository
 
     public function findAll(): array
     {
-        $rouanetProjects = $this->eloquentRouanetProjectModel->findAll();
+        $rouanetProjects = (array) $this->eloquentRouanetProjectModel->all();
 
         return $rouanetProjects;
     }
@@ -110,7 +111,7 @@ final class EloquentRouanetProjectRepository implements RouanetProjectRepository
             ->firstOrFail();
 
         // Return Domain User model
-       return new RouanetProject(
+        return new RouanetProject(
             new RouanetProjectId($rouanetProject->idProjeto),
             new RouanetProjectPronac($rouanetProject->pronac),
             new RouanetProjectAnoProjeto($rouanetProject->anoProjeto),
